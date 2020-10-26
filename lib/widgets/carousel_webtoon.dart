@@ -10,7 +10,7 @@ class CarouselWebtoon extends StatefulWidget {
 class _CarouselWebtoonState extends State<CarouselWebtoon> {
   List<Webtoon> webtoons;
 
-  List<String> thumbnail;
+  List<Widget> thumbnail;
   List<String> title;
   List<double> rating;
   List<String> writer;
@@ -20,6 +20,13 @@ class _CarouselWebtoonState extends State<CarouselWebtoon> {
     super.initState();
 
     webtoons = widget.webtoons;
+
+    thumbnail =
+        webtoons.map((e) => Image.asset('images/' + e.thumbnail)).toList();
+    title = webtoons.map((e) => e.title).toList();
+    rating = webtoons.map((e) => e.rating).toList();
+    writer = webtoons.map((e) => e.writer).toList();
+    //vo parsing end
   }
 
   @override
