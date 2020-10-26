@@ -13,15 +13,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //no physics
       title: 'ksy',
-      theme: ThemeData(
-          brightness: Brightness.dark,
-          primaryColor: Colors.black,
-          accentColor: Colors.white),
       home: DefaultTabController(
         length: 5,
         child: Scaffold(
           body: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
             children: <Widget>[
               HomeScreen(),
               Container(),

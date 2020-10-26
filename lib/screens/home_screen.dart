@@ -25,26 +25,29 @@ class TopBar extends StatelessWidget {
         children: [
           Stack(
             children: <Widget>[
+              //will changed by carousel_clider
+              //https://pub.dev/packages/carousel_slider
               Image.asset(
                 'images/mycat.jpg',
                 fit: BoxFit.contain,
                 alignment: Alignment.center,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Image.asset(
-                    'images/cookie.png',
-                    fit: BoxFit.contain,
-                    height: 25,
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(right: 1),
-                    child: Text('◀       인기순       ▶',style: TextStyle(color: Colors.black,fontSize: 11),
-                  ),
-                  Icon(Icons.search),
-                ],
+
+              Container(
+                padding: EdgeInsets.all(8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'images/cookie.png',
+                      fit: BoxFit.contain,
+                      height: 24,
+                    ),
+                    Icon(Icons.search),
+                  ],
+                ),
               ),
+              //add carousel index tag
             ],
           ),
           DefaultTabController(length: 9, child: WeeklyBar())
