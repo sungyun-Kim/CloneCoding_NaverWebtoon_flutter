@@ -1,4 +1,5 @@
 import 'package:clonecoding_naverwebtoon/screens/home_screen.dart';
+import 'package:clonecoding_naverwebtoon/screens/more_screen.dart';
 import 'package:clonecoding_naverwebtoon/widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       //no physics
       title: 'ksy',
       home: DefaultTabController(
@@ -25,7 +27,7 @@ class _MyAppState extends State<MyApp> {
               Container(),
               Container(),
               Container(),
-              Container(),
+              MoreScreen(),
             ],
           ),
           bottomNavigationBar: BottomBar(),

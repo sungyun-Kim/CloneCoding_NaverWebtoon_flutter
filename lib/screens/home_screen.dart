@@ -1,5 +1,6 @@
 import 'package:clonecoding_naverwebtoon/model/model_webtoon.dart';
 import 'package:clonecoding_naverwebtoon/widgets/carousel_slider_image.dart';
+import 'package:clonecoding_naverwebtoon/widgets/carousel_webtoon.dart';
 import 'package:clonecoding_naverwebtoon/widgets/weekly_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +9,153 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  TabController _tabController;
+
+  List<Tab> myTabs = <Tab>[
+    Tab(
+      child: Text(
+        '신작',
+        style: TextStyle(color: Colors.black),
+        textAlign: TextAlign.center,
+      ),
+    ),
+    Tab(
+      child: Text(
+        '월',
+        style: TextStyle(color: Colors.black),
+      ),
+    ),
+    Tab(
+      child: Text(
+        '화',
+        style: TextStyle(color: Colors.black),
+      ),
+    ),
+    Tab(
+      child: Text(
+        '수',
+        style: TextStyle(color: Colors.black),
+      ),
+    ),
+    Tab(
+      child: Text(
+        '목',
+        style: TextStyle(color: Colors.black),
+      ),
+    ),
+    Tab(
+      child: Text(
+        '금',
+        style: TextStyle(color: Colors.black),
+      ),
+    ),
+    Tab(
+      child: Text(
+        '토',
+        style: TextStyle(color: Colors.black),
+      ),
+    ),
+    Tab(
+      child: Text(
+        '일',
+        style: TextStyle(color: Colors.black),
+      ),
+    ),
+    Tab(
+      child: Text(
+        '완결',
+        style: TextStyle(color: Colors.black),
+      ),
+    ),
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = new TabController(vsync: this, length: 9);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
         TopBar(),
+        WeeklyBar(
+          tabController: _tabController,
+        ),
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.width,
+          //make inkWells
+          child: TabBarView(controller: _tabController, children: <Widget>[
+            Container(
+              alignment: Alignment.topCenter,
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 210,
+                          width: 130,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black12)),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image.asset('images/catIndex1.PNG'),
+                              ),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      '레옹2',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      '★' + '9.95',
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                    Text('sykim',
+                                        style:
+                                            TextStyle(color: Colors.black38)),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            //index
+            Text('1'),
+            Text('2'),
+            Text('3'),
+            Text('4'),
+            Text('5'),
+            Text('6'),
+            Text('7'),
+            Text('8'),
+          ]),
+        ),
       ],
     );
   }
@@ -42,8 +184,6 @@ class TopBar extends StatelessWidget {
         children: [
           Stack(
             children: <Widget>[
-              //will changed by carousel_clider
-              //https://pub.dev/packages/carousel_slider
               CarouselImage(webtoons: webtoons),
               Container(
                 decoration:
@@ -63,8 +203,6 @@ class TopBar extends StatelessWidget {
               ),
             ],
           ),
-          DefaultTabController(length: 9, child: WeeklyBar()),
-          //add carousel_webtoon
         ],
       ),
     );

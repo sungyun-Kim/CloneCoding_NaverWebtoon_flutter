@@ -19,10 +19,13 @@ class _CarouselImageState extends State<CarouselImage> {
     //make Widgets like Image.asset('./images/myCuteCat.jpg')
     webtoons = widget.webtoons;
     images = webtoons
-        .map((e) => Image.asset(
-              'images/' + e.image,
-              fit: BoxFit.fitWidth,
-            ))
+        .map(
+          (e) => Image.asset(
+            'images/' + e.image,
+            fit: BoxFit.cover,
+            width: 1280,
+          ),
+        )
         .toList();
   }
 
