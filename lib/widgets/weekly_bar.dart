@@ -6,10 +6,26 @@ class WeeklyBar extends StatelessWidget {
   WeeklyBar({this.tabController});
   final List<Tab> myWeeklyTabs = <Tab>[
     Tab(
-      child: Text(
-        '신작',
-        style: TextStyle(color: Colors.black),
-        textAlign: TextAlign.center,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            child: Text(
+              '신작',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+          ),
+          Container(
+            alignment: Alignment.centerRight,
+            child: Text('n',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 11,
+                )),
+          )
+        ],
       ),
     ),
     Tab(

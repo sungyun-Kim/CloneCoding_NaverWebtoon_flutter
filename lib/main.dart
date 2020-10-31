@@ -1,7 +1,9 @@
 import 'package:clonecoding_naverwebtoon/screens/home_screen.dart';
 import 'package:clonecoding_naverwebtoon/screens/more_screen.dart';
 import 'package:clonecoding_naverwebtoon/widgets/bottom_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 void main() => runApp(MyApp());
 
