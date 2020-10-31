@@ -22,7 +22,7 @@ class _CarouselWebtoonState extends State<CarouselWebtoon> {
     webtoons = widget.webtoons;
 
     thumbnail =
-        webtoons.map((e) => Image.asset('images/' + e.thumbnail)).toList();
+        webtoons.map((e) => Image.asset('images/catIndex0.jpg')).toList();
     title = webtoons.map((e) => e.title).toList();
     rating = webtoons.map((e) => e.rating).toList();
     writer = webtoons.map((e) => e.writer).toList();
@@ -31,6 +31,51 @@ class _CarouselWebtoonState extends State<CarouselWebtoon> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Container(
+            child: Column(
+              children: createInkwell(context, webtoons, 0),
+            ),
+          ),
+        ],
+      ),
+    );
   }
+}
+
+List<Widget> createInkwell(
+    BuildContext context, List<Webtoon> webtoon, var index) {
+  List<Widget> result = [];
+
+  for (var i = 0; i < webtoon.length; i++) {
+    List<Widget> tempList = [];
+    tempList.add(
+      InkWell(
+        onTap: () {},
+        child: Container(
+          padding: EdgeInsets.all(0.5),
+          child: Column(
+            children: <Widget>[
+              Container(
+                child: Image.asset('images/' + webtoon[i].image),
+              ),
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Text(webtoon[i].title),
+                    Text('★' + webtoon[i].rating.toString()),
+                    Text(webtoon[i].writer),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  return result;
 }

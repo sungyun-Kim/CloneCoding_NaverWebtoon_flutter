@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen>
         ),
         Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           //make inkWells
           child: TabBarView(controller: _tabController, children: <Widget>[
             Container(
@@ -140,20 +140,235 @@ class _HomeScreenState extends State<HomeScreen>
                           ),
                         ),
                       ),
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 210,
+                          width: 130,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black12)),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image.asset('images/catIndex1.PNG'),
+                              ),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      '레옹2',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      '★' + '9.95',
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                    Text(
+                                      'sykim',
+                                      style: TextStyle(color: Colors.black38),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 210,
+                          width: 130,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black12)),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image.asset('images/catIndex1.PNG'),
+                              ),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      '레옹2',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      '★' + '9.95',
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                    Text('sykim',
+                                        style:
+                                            TextStyle(color: Colors.black38)),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 210,
+                          width: 130,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black12)),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image.asset('images/catIndex1.PNG'),
+                              ),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      '레옹2',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      '★' + '9.95',
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                    Text('sykim',
+                                        style:
+                                            TextStyle(color: Colors.black38)),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 210,
+                          width: 130,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black12)),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image.asset('images/catIndex1.PNG'),
+                              ),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      '레옹2',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      '★' + '9.95',
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                    Text('sykim',
+                                        style:
+                                            TextStyle(color: Colors.black38)),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 210,
+                          width: 130,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black12)),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image.asset('images/catIndex1.PNG'),
+                              ),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      '레옹2',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      '★' + '9.95',
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                    Text('sykim',
+                                        style:
+                                            TextStyle(color: Colors.black38)),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
             ),
             //index
-            Text('1'),
-            Text('2'),
-            Text('3'),
-            Text('4'),
-            Text('5'),
-            Text('6'),
-            Text('7'),
-            Text('8'),
+            Text(
+              '월요일',
+              style: TextStyle(fontSize: 15),
+            ),
+            Text(
+              '화요일',
+              style: TextStyle(fontSize: 15),
+            ),
+            Text(
+              '수요일',
+              style: TextStyle(fontSize: 15),
+            ),
+            Text(
+              '목요일',
+              style: TextStyle(fontSize: 15),
+            ),
+            Text(
+              '금요일',
+              style: TextStyle(fontSize: 15),
+            ),
+            Text(
+              '토요일',
+              style: TextStyle(fontSize: 15),
+            ),
+            Text(
+              '일요일',
+              style: TextStyle(fontSize: 15),
+            ),
+            Text(
+              '완결',
+              style: TextStyle(fontSize: 15),
+            ),
           ]),
         ),
       ],
