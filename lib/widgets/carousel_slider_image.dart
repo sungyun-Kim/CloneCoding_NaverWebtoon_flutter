@@ -23,7 +23,6 @@ class _CarouselImageState extends State<CarouselImage> {
           (e) => Image.asset(
             'images/' + e.image,
             fit: BoxFit.cover,
-            width: 1280,
           ),
         )
         .toList();
@@ -32,13 +31,18 @@ class _CarouselImageState extends State<CarouselImage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black12),
+      ),
       child: Column(
         children: <Widget>[
           Container(
+            width: MediaQuery.of(context).size.width,
             child: CarouselSlider(
               items: images,
-              options: CarouselOptions(autoPlay: true),
+              options: CarouselOptions(
+                autoPlay: false,
+              ),
             ),
           ),
         ],
