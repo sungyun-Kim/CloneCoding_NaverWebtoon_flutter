@@ -1,6 +1,6 @@
 import 'package:clonecoding_naverwebtoon/model/model_webtoon.dart';
 import 'package:clonecoding_naverwebtoon/widgets/carousel_slider_image.dart';
-import 'package:clonecoding_naverwebtoon/widgets/carousel_webtoon.dart';
+import 'package:clonecoding_naverwebtoon/widgets/webtoon_grid_view.dart';
 import 'package:clonecoding_naverwebtoon/widgets/weekly_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -13,25 +13,81 @@ List<Webtoon> webtoons = [
   Webtoon.fromMap(
     {
       'image': 'catIndex0.jpg',
-      'title': 'Leon00',
+      'title': '김레옹가나다',
       'rating': 9.91,
+      'writer': '김성연'
+    },
+  ),
+  Webtoon.fromMap(
+    {
+      'image': 'catIndex8.jpg',
+      'title': 'ThatEyes',
+      'rating': 20.20,
+      'writer': '김성연'
+    },
+  ),
+  Webtoon.fromMap(
+    {
+      'image': 'catIndex9.jpg',
+      'title': 'CatInTheBox',
+      'rating': 9.25,
+      'writer': '김성연'
+    },
+  ),
+  Webtoon.fromMap(
+    {
+      'image': 'catIndex2.jpg',
+      'title': 'LeonSleep',
+      'rating': 9.25,
+      'writer': '김성연'
+    },
+  ),
+  Webtoon.fromMap(
+    {
+      'image': 'catIndex3.jpg',
+      'title': 'LeonSleepAgain',
+      'rating': 10.00,
       'writer': 'sungyun-kim'
     },
   ),
   Webtoon.fromMap(
     {
-      'image': 'catIndex1.PNG',
-      'title': 'Leon01',
-      'rating': 6.85,
-      'writer': 'ksy'
+      'image': 'catIndex4.jpg',
+      'title': 'Leon',
+      'rating': 9.99,
+      'writer': 'ksy-kim'
+    },
+  ),
+  Webtoon.fromMap(
+    {
+      'image': 'catIndex5.jpg',
+      'title': 'LeonInTheBox',
+      'rating': 9.15,
+      'writer': '김성연'
+    },
+  ),
+  Webtoon.fromMap(
+    {
+      'image': 'catIndex6.jpg',
+      'title': 'Leon06',
+      'rating': 5.25,
+      'writer': 'sungyun-kim'
+    },
+  ),
+  Webtoon.fromMap(
+    {
+      'image': 'catIndex7.jpg',
+      'title': 'Leon07',
+      'rating': 1.25,
+      'writer': '김성연'
     },
   ),
   Webtoon.fromMap(
     {
       'image': 'catIndex1.PNG',
-      'title': 'Leon02',
-      'rating': 9.25,
-      'writer': '김성연'
+      'title': '레옹썩소',
+      'rating': 6.85,
+      'writer': 'ksy'
     },
   ),
 ];
@@ -123,42 +179,42 @@ class _HomeScreenState extends State<HomeScreen>
           height: MediaQuery.of(context).size.height,
           //make inkWells
           child: TabBarView(controller: _tabController, children: <Widget>[
-            CarouselWebtoon(
+            GridWebtoon(
               webtoons: webtoons,
               index: 0,
             ),
             //index
-            Text(
-              '월요일',
-              style: TextStyle(fontSize: 15),
+            GridWebtoon(
+              webtoons: webtoons,
+              index: 1,
             ),
-            Text(
-              '화요일',
-              style: TextStyle(fontSize: 15),
+            GridWebtoon(
+              webtoons: webtoons,
+              index: 2,
             ),
-            Text(
-              '수요일',
-              style: TextStyle(fontSize: 15),
+            GridWebtoon(
+              webtoons: webtoons,
+              index: 3,
             ),
-            Text(
-              '목요일',
-              style: TextStyle(fontSize: 15),
+            GridWebtoon(
+              webtoons: webtoons,
+              index: 4,
             ),
-            Text(
-              '금요일',
-              style: TextStyle(fontSize: 15),
+            GridWebtoon(
+              webtoons: webtoons,
+              index: 5,
             ),
-            Text(
-              '토요일',
-              style: TextStyle(fontSize: 15),
+            GridWebtoon(
+              webtoons: webtoons,
+              index: 6,
             ),
-            Text(
-              '일요일',
-              style: TextStyle(fontSize: 15),
+            GridWebtoon(
+              webtoons: webtoons,
+              index: 7,
             ),
-            Text(
-              '완결',
-              style: TextStyle(fontSize: 15),
+            GridWebtoon(
+              webtoons: webtoons,
+              index: 8,
             ),
           ]),
         ),
