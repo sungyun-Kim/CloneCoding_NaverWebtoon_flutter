@@ -54,6 +54,16 @@ flutter:
   - images/cookie.png
   - images/catIndex0.jpg
   - images/catIndex1.PNG
+  - images/catIndex2.jpg
+  - images/catIndex3.jpg
+  - images/catIndex4.jpg
+  - images/catIndex5.jpg
+  - images/catIndex6.jpg
+  - images/catIndex7.jpg
+  - images/catIndex8.jpg
+  - images/catIndex9.jpg
+  - images/catIndex10.jpg
+  - images/catIndex11.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
