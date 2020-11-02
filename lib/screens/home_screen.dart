@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:clonecoding_naverwebtoon/model/model_webtoon.dart';
 import 'package:clonecoding_naverwebtoon/widgets/carousel_slider_image.dart';
 import 'package:clonecoding_naverwebtoon/widgets/webtoon_grid_view.dart';
 import 'package:clonecoding_naverwebtoon/widgets/weekly_bar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

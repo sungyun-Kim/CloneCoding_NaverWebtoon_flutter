@@ -25,10 +25,12 @@ class _MyAppState extends State<MyApp> {
     return FutureBuilder(
       future: _initialization,
       builder: (context, snapshot) {
+        //firestore err
         if (snapshot.hasError) {
           return Text('error: snapShot has Error');
         }
 
+        //successfully connected
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,

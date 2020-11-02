@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:clonecoding_naverwebtoon/model/model_webtoon.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
+FirebaseFirestore firestore = FirebaseFirestore.instance;
 
 class GridWebtoon extends StatefulWidget {
   final int index;
@@ -49,19 +53,12 @@ List<Widget> createInkwell(
     BuildContext context, List<Webtoon> webtoon, var index) {
   List<Widget> result = [];
 
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
-
   int remain = 3 - webtoon.length % 3;
 
   for (var i = 0; i < webtoon.length; i++) {
     result.add(
       InkWell(
-        onTap: () {
-          print('$i is clicked!');
-          firestore.collection('testCol').doc("testDoc").set(
-            {'title': "김레옹가나다", 'rating': 9.91, 'writer': "김성연"},
-          );
-        },
+        onTap: () {},
         child: Container(
           decoration: BoxDecoration(
             border: Border(

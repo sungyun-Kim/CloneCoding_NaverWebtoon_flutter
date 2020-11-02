@@ -78,7 +78,6 @@ class WeeklyBar extends StatelessWidget implements PreferredSizeWidget {
     ),
   ];
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => new Size.fromWidth(100);
 
   @override
