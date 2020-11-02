@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class WeeklyBar extends StatelessWidget {
-  TabController tabController;
+class WeeklyBar extends StatelessWidget implements PreferredSizeWidget {
+  final TabController tabController;
 
   WeeklyBar({this.tabController});
   final List<Tab> myWeeklyTabs = <Tab>[
@@ -77,10 +77,15 @@ class WeeklyBar extends StatelessWidget {
       ),
     ),
   ];
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => new Size.fromWidth(100);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 50,
+      width: 130,
       child: TabBar(
         controller: tabController,
         labelPadding: EdgeInsets.all(0),

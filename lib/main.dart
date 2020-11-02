@@ -2,6 +2,7 @@ import 'package:clonecoding_naverwebtoon/screens/home_screen.dart';
 import 'package:clonecoding_naverwebtoon/screens/more_screen.dart';
 import 'package:clonecoding_naverwebtoon/widgets/bottom_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -19,27 +20,40 @@ class _MyAppState extends State<MyApp> {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      //no physics
-      title: 'ksy',
+    final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
-      home: DefaultTabController(
-        length: 5,
-        child: Scaffold(
-          body: TabBarView(
-            physics: NeverScrollableScrollPhysics(),
-            children: <Widget>[
-              HomeScreen(),
-              Container(),
-              Container(),
-              Container(),
-              MoreScreen(),
-            ],
-          ),
-          bottomNavigationBar: BottomBar(),
-        ),
-      ),
+    return FutureBuilder(
+      future: _initialization,
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Text('error: snapShot has Error');
+        }
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            //no physics
+            title: 'ksy',
+
+            home: DefaultTabController(
+              length: 5,
+              child: Scaffold(
+                body: TabBarView(
+                  physics: NeverScrollableScrollPhysics(),
+                  children: <Widget>[
+                    HomeScreen(),
+                    Container(),
+                    Container(),
+                    Container(),
+                    MoreScreen(),
+                  ],
+                ),
+                bottomNavigationBar: BottomBar(),
+              ),
+            ),
+          );
+        }
+      },
     );
   }
 }
