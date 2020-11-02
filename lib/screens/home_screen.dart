@@ -178,45 +178,16 @@ class _HomeScreenState extends State<HomeScreen>
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           //make inkWells
-          child: TabBarView(controller: _tabController, children: <Widget>[
-            GridWebtoon(
-              webtoons: webtoons,
-              index: 0,
-            ),
-            //index
-            GridWebtoon(
-              webtoons: webtoons,
-              index: 1,
-            ),
-            GridWebtoon(
-              webtoons: webtoons,
-              index: 2,
-            ),
-            GridWebtoon(
-              webtoons: webtoons,
-              index: 3,
-            ),
-            GridWebtoon(
-              webtoons: webtoons,
-              index: 4,
-            ),
-            GridWebtoon(
-              webtoons: webtoons,
-              index: 5,
-            ),
-            GridWebtoon(
-              webtoons: webtoons,
-              index: 6,
-            ),
-            GridWebtoon(
-              webtoons: webtoons,
-              index: 7,
-            ),
-            GridWebtoon(
-              webtoons: webtoons,
-              index: 8,
-            ),
-          ]),
+          child: TabBarView(
+            controller: _tabController,
+            children: <Widget>[
+              for (var i = 0; i < myTabs.length; i++)
+                GridWebtoon(
+                  webtoons: webtoons,
+                  index: i,
+                )
+            ],
+          ),
         ),
       ],
     );
@@ -226,7 +197,8 @@ class _HomeScreenState extends State<HomeScreen>
 class TopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return PreferredSize(
+      preferredSize: Size.fromWidth(130),
       child: Column(
         children: [
           Stack(
